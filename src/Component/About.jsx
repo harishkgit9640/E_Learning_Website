@@ -13,24 +13,24 @@ const About = () => {
             </div>
 
 
-            <section class="container">
-                <div class="title text-center my-5">
-                    <h2 class="text-primary">About</h2>
+            <section className="container">
+                <div className="title text-center my-5">
+                    <h2 className="text-primary">About</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, ducimus.</p>
                 </div>
-                <div class="row g-2">
-                    <div class="image col-6">
+                <div className="row g-2">
+                    <div className="image col-6">
                         {/* <img src="https://picsum.photos/500/250?both" /> */}
                     </div>
-                    <div class="content col-6 text-start">
-                        <h1 class="text-primary">Know About Us</h1>
+                    <div className="content col-6 text-start">
+                        <h1 className="text-primary">Know About Us</h1>
                         <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores dicta nemo eaque possimus,
                             iusto
                             dolore earum explicabo id voluptas quod voluptates vitae animi aliquid, in voluptatem provident
                             dolore earum explicabo id voluptas quod voluptates vitae animi aliquid, in voluptatem provident
                             modi
                             repudiandae maxime.</p>
-                        {/* <a href="#" class="btn btn-primary">Read more...</a> */}
+                        {/* <Link href="#" className="btn btn-primary">Read more...</Link> */}
                     </div>
                 </div>
             </section>

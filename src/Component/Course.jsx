@@ -18,7 +18,8 @@ const Course = () => {
                 </div>
                 <div class="row">
                     <div class="col-md-4 col-sm-2 col-12">
-                        <div class="card" style="width: 18rem;">
+                        {/* style="width: 18rem; */}
+                        <div class="card">
                             <img src="https://picsum.photos/500/250" class="card-img-top" alt="cardImg" />
                             <div class="card-body">
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of
@@ -28,7 +29,7 @@ const Course = () => {
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-2 col-12">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card">
                             <img src="https://picsum.photos/500/250" class="card-img-top" alt="cardImg" />
                             <div class="card-body">
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of
@@ -38,7 +39,7 @@ const Course = () => {
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-2 col-12">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card">
                             <img src="https://picsum.photos/500/250" class="card-img-top" alt="cardImg" />
                             <div class="card-body">
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of
@@ -51,7 +52,7 @@ const Course = () => {
                 </div>
                 <div class="row g-3">
                     <div class="col-md-4 col-sm-2 col-12">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card">
                             <img src="https://picsum.photos/500/250" class="card-img-top" alt="cardImg" />
                             <div class="card-body">
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of
@@ -61,7 +62,7 @@ const Course = () => {
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-2 col-12">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card">
                             <img src="https://picsum.photos/500/250" class="card-img-top" alt="cardImg" />
                             <div class="card-body">
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of
@@ -71,7 +72,7 @@ const Course = () => {
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-2 col-12">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card">
                             <img src="https://picsum.photos/500/250" class="card-img-top" alt="cardImg" />
                             <div class="card-body">
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of
