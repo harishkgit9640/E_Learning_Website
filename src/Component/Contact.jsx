@@ -2,7 +2,18 @@ import React from 'react'
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import Alert from '@mui/material/Alert';
+
 const Contact = () => {
+
+    const submitForm = () => {
+        <>
+            <Alert severity="error">Page Not Found!</Alert>
+            <Alert severity="success">This is a success alert — check it out!</Alert>
+        </>
+    }
+
+
     return (
         <>
             <div className="container">
@@ -30,7 +41,7 @@ const Contact = () => {
                                 </Box>
                             </div>
                             <div className="col-12">
-                                <Button variant="contained">Submit</Button>
+                                <Button onClick={submitForm} variant="contained">Submit</Button>
                             </div>
                         </div>
 

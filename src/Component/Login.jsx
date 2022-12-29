@@ -1,12 +1,21 @@
 import React from 'react'
+import Alert from '@mui/material/Alert';
 
 const Login = () => {
+
+    const submitForm = () => {
+        <>
+            <Alert severity="error">Page Not Found!</Alert>
+            <Alert severity="success">This is a success alert — check it out!</Alert>
+        </>
+    }
+
     return (
         <div>
             <div className="container my-5">
                 <h1 className="text-center text-primary mb-5">Log In</h1>
                 <div className="col-md-6 col-sm-6 mx-auto">
-                    <form method="post" action="#">
+                    <form method="post">
                         <div className="row g-3">
                             <div className="col-12">
                                 <label for="inputEmail4" className="form-label">Email</label>
@@ -24,8 +33,8 @@ const Login = () => {
                                 <button type="submit" className="btn btn-primary">Log in</button>
                             </div>
                         </div>
-
                     </form>
+                    <button onClick={submitForm} >click me</button>
                 </div>
             </div>
         </div>
