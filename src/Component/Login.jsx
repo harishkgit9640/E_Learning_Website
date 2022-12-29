@@ -3,11 +3,12 @@ import Alert from '@mui/material/Alert';
 
 const Login = () => {
 
-    const submitForm = () => {
-        <>
-            <Alert severity="error">Page Not Found!</Alert>
-            <Alert severity="success">This is a success alert — check it out!</Alert>
-        </>
+    const submitForm = (e) => {
+        e.preventDefault();
+        // <>
+        //     <Alert severity="error">Page Not Found!</Alert>
+        //     <Alert severity="success">This is a success alert — check it out!</Alert>
+        // </>
     }
 
     return (
@@ -26,15 +27,14 @@ const Login = () => {
                                 <input type="password" className="form-control" id="inputPassword4" />
                             </div>
                             <div className="d-flex justify-content-between">
-                                <a href="forgetpass.html">Forget Password</a>
+                                <a href="forget_pass.html">Forget Password</a>
                                 <p className="text-muted"> New User <a href="./signup.html" className="ps-2">Sign In</a></p>
                             </div>
                             <div className="col-12">
-                                <button type="submit" className="btn btn-primary">Log in</button>
+                                <button type="submit" onClick={submitForm} className="btn btn-primary">Log in</button>
                             </div>
                         </div>
                     </form>
-                    <button onClick={submitForm} >click me</button>
                 </div>
             </div>
         </div>
