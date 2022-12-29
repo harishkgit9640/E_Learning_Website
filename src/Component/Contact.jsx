@@ -1,38 +1,44 @@
 import React from 'react'
-
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 const Contact = () => {
     return (
-        <div>
+        <>
             <div className="container">
                 <div className="col-md-6 col-sm-6 mx-auto">
                     <form method="post" action="#">
                         <div className="row g-3">
                             <div className="col-12">
-                                <label for="inputName" className="form-label">Full Name</label>
-                                <input type="text" className="form-control" id="inputName" />
+                                <Box component="form" sx={{ '& > :not(style)': { mt: 5, width: '100%' }, }} noValidate autoComplete="off" >
+                                    <TextField id="input_name" label="Full Name" variant="outlined" />
+                                </Box>
                             </div>
                             <div className="col-12">
-                                <label for="inputEmail4" className="form-label">Email</label>
-                                <input type="email" className="form-control" id="inputEmail4" />
+                                <Box component="form" sx={{ '& > :not(style)': { mt: 1, width: '100%' }, }} noValidate autoComplete="off" >
+                                    <TextField id="input_name" label="E-mail" variant="outlined" />
+                                </Box>
                             </div>
                             <div className="col-12">
-                                <label for="inputNumber" className="form-label">Phone</label>
-                                <input type="text" className="form-control" id="inputNumber" />
+                                <Box component="form" sx={{ '& > :not(style)': { mt: 1, width: '100%' }, }} noValidate autoComplete="off" >
+                                    <TextField id="input_name" label="Mobile Number" variant="outlined" />
+                                </Box>
                             </div>
                             <div className="col-12">
-                                <label for="inputMessage" className="form-label">Message</label>
-                                <textarea name="message" className="form-control" id="inputMessage" cols="auto" rows="5"></textarea>
+                                <Box component="form" sx={{ '& > :not(style)': { mt: 1, width: '100%' }, }} noValidate autoComplete="off" >
+                                    <TextField id="outlined-multiline-static" label="Message" multiline rows={4} />
+                                </Box>
                             </div>
-
                             <div className="col-12">
-                                <button type="submit" className="btn btn-primary">Submit</button>
+                                <Button variant="contained">Submit</Button>
                             </div>
                         </div>
 
                     </form>
                 </div>
             </div>
-        </div>
+
+        </>
     )
 }
 
