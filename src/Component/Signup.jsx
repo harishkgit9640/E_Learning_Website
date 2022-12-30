@@ -1,65 +1,118 @@
 import React from 'react'
+// import Alert from '@mui/material/Alert';
 
-const Signup = () => {
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import { NavLink } from "react-router-dom";
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+function Copyright(props) {
     return (
-        <div>
-            <div className="container my-5">
-                <h1 className="text-center text-primary mb-5">Sign In</h1>
-                <div className="col-md-6 col-sm-6 mx-auto">
-                    <form method="post" action="#">
-                        <div className="row g-3">
-                            <div className="col-md-6">
-                                <label for="inputName" className="form-label">First Name</label>
-                                <input type="text" className="form-control" id="inputName" />
-                            </div>
-                            <div className="col-md-6">
-                                <label for="inputName" className="form-label">Last Name</label>
-                                <input type="text" className="form-control" id="inputName" />
-                            </div>
-                            <div className="col-md-6">
-                                <label for="inputEmail4" className="form-label">Email</label>
-                                <input type="email" className="form-control" id="inputEmail4" />
-                            </div>
-                            <div className="col-md-6">
-                                <label for="inputPassword4" className="form-label">Password</label>
-                                <input type="password" className="form-control" id="inputPassword4" />
-                            </div>
-                            <div className="col-12">
-                                <label for="phone" className="form-label">Mobile Number</label>
-                                <input type="text" className="form-control" id="phone" />
-                            </div>
-                            <div className="col-12">
-                                <label for="inputAddress" className="form-label">Address</label>
-                                <input type="text" className="form-control" id="inputAddress" placeholder="" />
-                            </div>
-
-                            <div className="col-md-6">
-                                <label for="inputCity" className="form-label">City</label>
-                                <input type="text" className="form-control" id="inputCity" />
-                            </div>
-                            <div className="col-md-4">
-                                <label for="inputState" className="form-label">State</label>
-                                <select id="inputState" className="form-select">
-                                    <option selected>Choose...</option>
-                                    <option>...</option>
-                                </select>
-                            </div>
-                            <div className="col-md-2">
-                                <label for="inputZip" className="form-label">Zip</label>
-                                <input type="text" className="form-control" id="inputZip" />
-                            </div>
-                            <div className="col-12">
-                                <p className="text-muted"> Already have an Account <a href="./login.html" className="ps-2">Login</a></p>
-                            </div>
-                            <div className="col-12">
-                                <button type="submit" className="btn btn-primary">Sign in</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    )
+        <Typography variant="body2" color="text.secondary" align="center" {...props}>
+            {'Copyright © '}
+            <NavLink color="inherit" to="https://mui.com/">
+                Your Website
+            </NavLink>{' '}
+            {new Date().getFullYear()}
+            {'.'}
+        </Typography>
+    );
 }
 
-export default Signup
+const theme = createTheme();
+const signup = () => {
+
+    // <>
+    //     <Alert severity="error">Page Not Found!</Alert>
+    //     <Alert severity="success">This is a success alert — check it out!</Alert>
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const data = new FormData(event.currentTarget);
+        console.log({
+            email: data.get('email'),
+            password: data.get('password'),
+        });
+    };
+
+    return (
+        <ThemeProvider theme={theme}>
+            <Container component="main" maxWidth="xs">
+                <CssBaseline />
+                <Box
+                    sx={{
+                        marginTop: 8,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                    }}
+                >
+                    <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+                        <LockOutlinedIcon />
+                    </Avatar>
+                    <Typography component="h1" variant="h5">
+                        Sign Up
+                    </Typography>
+                    <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+                        <TextField
+                            margin="normal"
+                            required
+                            fullWidth
+                            id="email"
+                            label="Email Address"
+                            name="email"
+                            autoComplete="email"
+                            autoFocus
+                        />
+                        <TextField
+                            margin="normal"
+                            required
+                            fullWidth
+                            name="password"
+                            label="Password"
+                            type="password"
+                            id="password"
+                            autoComplete="current-password"
+                        />
+                        <FormControlLabel
+                            control={<Checkbox value="remember" color="primary" />}
+                            label="Remember me"
+                        />
+                        <Button
+                            type="submit"
+                            fullWidth
+                            variant="contained"
+                            sx={{ mt: 3, mb: 2 }}
+                        >
+                            Sign Up
+                        </Button>
+                        <Grid container>
+                            <Grid item xs>
+                                <NavLink to="#" variant="body2">
+                                    Forgot password?
+                                </NavLink>
+                            </Grid>
+                            <Grid item>
+                                <NavLink to="/login" variant="body2">
+                                    {"have an account? Log In"}
+                                </NavLink>
+                            </Grid>
+                        </Grid>
+                    </Box>
+                </Box>
+                <Copyright sx={{ mt: 8, mb: 4 }} />
+            </Container>
+        </ThemeProvider>
+    );
+}
+
+export default signup
