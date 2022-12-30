@@ -9,6 +9,7 @@ import Contact from './Component/Contact';
 import Blog from './Component/Blog';
 import Login from './Component/Login';
 import Signup from './Component/Signup';
+import Register from './Component/Register';
 import Error from './Component/Error';
 // import Faq from './Component/Faq';
 // import Footer from './Component/Footer';
@@ -26,6 +27,7 @@ function App() {
         <Route path='/contact' element={<Contact />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
         <Route path='*' element={<Error />} />
       </Routes>
     </>
