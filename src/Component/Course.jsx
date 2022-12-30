@@ -16,8 +16,8 @@ const Course = () => {
                     <h2 class="text-primary">Our Course</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, ducimus.</p>
                 </div>
-                <div class="row">
-                    <div class="col-md-4 col-sm-2 col-12">
+                <div class="row g-3">
+                    <div class="col-lg-4 col-sm-6 col-12">
                         {/* style="width: 18rem; */}
                         <div class="card">
                             <img src="https://picsum.photos/500/250" class="card-img-top" alt="cardImg" />
@@ -28,7 +28,7 @@ const Course = () => {
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-2 col-12">
+                    <div class="col-lg-4 col-sm-6 col-12">
                         <div class="card">
                             <img src="https://picsum.photos/500/250" class="card-img-top" alt="cardImg" />
                             <div class="card-body">
@@ -38,7 +38,7 @@ const Course = () => {
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-2 col-12">
+                    <div class="col-lg-4 col-sm-6 col-12">
                         <div class="card">
                             <img src="https://picsum.photos/500/250" class="card-img-top" alt="cardImg" />
                             <div class="card-body">
@@ -49,9 +49,8 @@ const Course = () => {
                         </div>
                     </div>
 
-                </div>
-                <div class="row g-3">
-                    <div class="col-md-4 col-sm-2 col-12">
+
+                    <div class="col-lg-4 col-sm-6 col-12">
                         <div class="card">
                             <img src="https://picsum.photos/500/250" class="card-img-top" alt="cardImg" />
                             <div class="card-body">
@@ -61,7 +60,7 @@ const Course = () => {
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-2 col-12">
+                    <div class="col-lg-4 col-sm-6 col-12">
                         <div class="card">
                             <img src="https://picsum.photos/500/250" class="card-img-top" alt="cardImg" />
                             <div class="card-body">
@@ -71,7 +70,7 @@ const Course = () => {
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-2 col-12">
+                    <div class="col-lg-4 col-sm-6 col-12">
                         <div class="card">
                             <img src="https://picsum.photos/500/250" class="card-img-top" alt="cardImg" />
                             <div class="card-body">

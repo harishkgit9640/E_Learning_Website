@@ -20,7 +20,7 @@ const About = () => {
                 </div>
                 <div className="row g-2">
                     <div className="image col-6">
-                        {/* <img src="https://picsum.photos/500/250?both" /> */}
+                        <img src="https://picsum.photos/500/250?both" alt='' />
                     </div>
                     <div className="content col-6 text-start">
                         <h1 className="text-primary">Know About Us</h1>

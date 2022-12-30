@@ -5,7 +5,7 @@ const Navbar = () => {
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container">
-                    <NavLink className="navbar-brand" to="/">Online Learning</NavLink>
+                    <NavLink className="navbar-brand" to="/">E-Learning</NavLink>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -17,7 +17,7 @@ const Navbar = () => {
                                 <NavLink className="nav-link active" aria-current="page" to="/">Home</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/about">About1</NavLink>
+                                <NavLink className="nav-link" to="/about">About</NavLink>
                             </li>
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/course">Course</NavLink>
