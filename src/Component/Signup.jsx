@@ -1,13 +1,9 @@
-import React from 'react'
-// import Alert from '@mui/material/Alert';
-
+import React, { useState } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
@@ -17,10 +13,15 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 function Copyright(props) {
     return (
-        <Typography variant="body2" color="text.secondary" align="center" {...props}>
+        <Typography
+            variant="body2"
+            color="text.secondary"
+            align="center"
+            {...props}
+        >
             {'Copyright © '}
-            <NavLink color="inherit" to="https://mui.com/">
-                Your Website
+            <NavLink color="inherit" to="https:/hksolution.in/">
+                HK SOLUTION
             </NavLink>{' '}
             {new Date().getFullYear()}
             {'.'}
@@ -29,19 +30,23 @@ function Copyright(props) {
 }
 
 const theme = createTheme();
-const signup = () => {
+const SignUp = () => {
 
-    // <>
-    //     <Alert severity="error">Page Not Found!</Alert>
-    //     <Alert severity="success">This is a success alert — check it out!</Alert>
+    const [data, setData] = useState({
+        firstName: "", lastName: "", email: "", password: ""
+    });
+
+    const handleInput = (event) => {
+        event.preventDefault();
+        const { name, value } = event.target;
+        setData((prevProps) => ({
+            ...prevProps,
+            [name]: value
+        }));
+    };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        console.log({
-            email: data.get('email'),
-            password: data.get('password'),
-        });
     };
 
     return (
@@ -60,33 +65,66 @@ const signup = () => {
                         <LockOutlinedIcon />
                     </Avatar>
                     <Typography component="h1" variant="h5">
-                        Sign Up
+                        Sign up
                     </Typography>
-                    <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-                        <TextField
-                            margin="normal"
-                            required
-                            fullWidth
-                            id="email"
-                            label="Email Address"
-                            name="email"
-                            autoComplete="email"
-                            autoFocus
-                        />
-                        <TextField
-                            margin="normal"
-                            required
-                            fullWidth
-                            name="password"
-                            label="Password"
-                            type="password"
-                            id="password"
-                            autoComplete="current-password"
-                        />
-                        <FormControlLabel
-                            control={<Checkbox value="remember" color="primary" />}
-                            label="Remember me"
-                        />
+                    <Box
+                        component="form"
+                        noValidate
+                        onSubmit={handleSubmit}
+                        sx={{ mt: 3 }}
+                    >
+                        <Grid container spacing={2}>
+                            <Grid item xs={12} sm={6}>
+                                <TextField
+                                    autoComplete="given-name"
+                                    name="firstName"
+                                    value={data.firstName}
+                                    onChange={handleInput}
+                                    required
+                                    fullWidth
+                                    id="firstName"
+                                    label="First Name"
+                                    autoFocus
+                                />
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <TextField
+                                    required
+                                    fullWidth
+                                    id="lastName"
+                                    label="Last Name"
+                                    name="lastName"
+                                    value={data.lastName}
+                                    onChange={handleInput}
+                                    autoComplete="family-name"
+                                />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <TextField
+                                    required
+                                    fullWidth
+                                    id="email"
+                                    label="Email Address"
+                                    name="email"
+                                    value={data.email}
+                                    onChange={handleInput}
+                                    autoComplete="email"
+                                />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <TextField
+                                    required
+                                    fullWidth
+                                    name="password"
+                                    value={data.password}
+                                    onChange={handleInput}
+                                    label="Password"
+                                    type="password"
+                                    id="password"
+                                    autoComplete="new-password"
+                                />
+                            </Grid>
+                        </Grid>
                         <Button
                             type="submit"
                             fullWidth
@@ -95,24 +133,21 @@ const signup = () => {
                         >
                             Sign Up
                         </Button>
-                        <Grid container>
-                            <Grid item xs>
-                                <NavLink to="#" variant="body2">
-                                    Forgot password?
-                                </NavLink>
-                            </Grid>
+                        <Grid container justifyContent="flex-start">
                             <Grid item>
+                                {' '}
+                                Already have an account?
                                 <NavLink to="/login" variant="body2">
-                                    {"have an account? Log In"}
+                                    Log In
                                 </NavLink>
                             </Grid>
                         </Grid>
                     </Box>
                 </Box>
-                <Copyright sx={{ mt: 8, mb: 4 }} />
+                <Copyright sx={{ mt: 5 }} />
             </Container>
         </ThemeProvider>
     );
 }
 
-export default signup
+export default SignUp
