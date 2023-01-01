@@ -1,10 +1,11 @@
 import React from 'react'
 // import Data from './Data'
-// import Card from './templates/Card'
+import Card from './templates/Card'
 
 const Course = () => {
 
     // const [data, setData] = useState(Data)
+    const Data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
     return (
         <div>
@@ -18,7 +19,9 @@ const Course = () => {
             </div>
             <section className="container mt-5">
                 <div className="row g-3">
-
+                    {Data.map((...item) => {
+                        <Card key={item.id} />
+                    })}
                 </div>
             </section>
         </div>
