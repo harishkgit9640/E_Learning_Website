@@ -19,7 +19,7 @@ function Copyright(props) {
             align="center"
             {...props}
         >
-            {'Copyright © '}
+            {'Copyright © All rights reserved '}
             <NavLink color="inherit" to="https:/hksolution.in/">
                 HK SOLUTION
             </NavLink>{' '}
@@ -35,7 +35,6 @@ const SignUp = () => {
     const [data, setData] = useState({
         firstName: "", lastName: "", email: "", password: ""
     });
-
     const handleInput = (event) => {
         event.preventDefault();
         const { name, value } = event.target;
