@@ -1,11 +1,11 @@
 import React from 'react'
-// import Data from './Data'
+import Data from './Data';
 import Card from './templates/Card'
 
 const Course = () => {
 
     // const [data, setData] = useState(Data)
-    const Data = [{ id: 1, name: "harish" }, { id: 2, name: "ganesh" }, { id: 3, name: "ravi" }, { id: 4, name: "raj" }];
+    // const Data = [{ id: 1, name: "harish" }, { id: 2, name: "ganesh" }, { id: 3, name: "ravi" }, { id: 4, name: "raj" }];
 
     return (
         <div>
@@ -20,7 +20,10 @@ const Course = () => {
             <section className="container mt-5">
                 <div className="row g-3">
                     {Data.map((item) => {
-                        return (<Card name={item.name} />)
+                        return (<Card
+                            img={item.img}
+                            content={item.content}
+                            name={item.name} />)
                     })}
                 </div>
             </section>
