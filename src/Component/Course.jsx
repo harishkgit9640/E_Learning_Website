@@ -17,14 +17,12 @@ const Course = () => {
                 </div>
             </div>
             <div className="container filter">
-                <div className="row g-3">
-                    <div className="col-lg-8 col-sm-8 col-12 d-flex">
-                        <button className='btn btn-success' >All</button>
-                        <button className='btn btn-primary' >Web Development</button>
-                        <button className='btn btn-secondary' >App Development</button>
-                        <button className='btn btn-warning' >Full Stack Java</button>
-                        <button className='btn btn-info' >Full Stack Python</button>
-                    </div>
+                <div className="d-flex justify-content-between  ">
+                    <button className='btn btn-success' >All</button>
+                    <button className='btn btn-primary' >Web Development</button>
+                    <button className='btn btn-secondary' >App Development</button>
+                    <button className='btn btn-warning' >Full Stack Java</button>
+                    <button className='btn btn-info' >Full Stack Python</button>
                 </div>
             </div>
             <section className="container mt-5">

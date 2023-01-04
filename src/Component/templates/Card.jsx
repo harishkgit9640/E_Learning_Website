@@ -9,9 +9,13 @@ const Card = (props) => {
                     <img src={props.img} className="card-img-top" alt="cardImg" />
                     <div className="card-body">
                         <p className="card-text">
-                            {props.content}
-                        </p>
-                        <p>{props.name}</p>
+                            {props.content} Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae exercitationem </p>
+                    </div>
+
+                    <div className="card-footer d-flex justify-content-between">
+                        <button className='btn btn-primary'>{props.name}</button>
+                        <p className='bg-dark'> $ 299 </p>
+                        <button className='btn btn-warning'>Add to Card</button>
                     </div>
                 </div>
             </div>
