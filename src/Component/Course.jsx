@@ -4,8 +4,6 @@ import Card from './templates/Card'
 
 const Course = () => {
 
-    // const [data, setData] = useState(Data)
-
     return (
         <div>
             <div className="container">

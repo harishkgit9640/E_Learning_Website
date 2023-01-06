@@ -11,7 +11,7 @@ const Card = (props) => {
                         <p className="card-text">
                             {props.content} Lorem ipsum dolor, sit met consectetur adipisicing elit. Vitae exercitationem </p>
                     </div>
-                    <h1>Hello kusum how are you?</h1>
+                    <h1>Hello I'll working tomorrow</h1>
                     <div className="card-footer d-flex justify-content-between">
                         <button className='btn btn-primary'>{props.name}</button>
                         <p className='bg-dark'> $ 299 </p>
