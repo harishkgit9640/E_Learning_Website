@@ -1,13 +1,19 @@
-import React from 'react'
+import React from 'react';
+import Typography from '@mui/material/Typography';
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
     return (
         <div>
-            <footer className="bg-dark py-2 text-center text-white">
-                <label>&copy; Copyrights 2022 All Rights Resolve || HK Solution</label>
+            <footer className="py-2 ">
+                <Typography variant="body2" color="text.secondary" align="center">
+                    © Copyright {new Date().getFullYear()} All rights reserved
+                    <NavLink to="http:/hksolution.in/" target="_blank"> HK SOLUTION </NavLink>
+
+                </Typography>
             </footer>
         </div>
-    )
-}
+    );
+};
 
-export default Footer
+export default Footer;

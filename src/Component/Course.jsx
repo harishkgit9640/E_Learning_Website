@@ -1,40 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react';
 import Data from './Data';
-import Card from './templates/Card'
+import Card from './templates/Card';
+import Category from './templates/Category';
+
+
+const newCategory = [...new Set(Data.map((val) => val.category), "All")]
 
 const Course = () => {
+    const [data, setData] = useState(Data);
+    const [item, setItem] = useState(newCategory);
+
+    const filterData = () => {
+
+    }
 
     return (
-        <div>
-            <div className="container">
-                <div className="jumbotron">
-                    <h1 className="display-4 text-center">Course</h1>
-                    <p className="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ut quae voluptatum dolore
-                        iste ullam quibusdam esse nostrum harum quam omnis dolor, tenetur officiis dolores dolorum delectus,
-                        veniam illum quasi.</p>
-                </div>
+        <>
+            <div className="container my-5">
+                <h1 className="text-center text-primary">OUR COURSES</h1>
+                <Category filterData={filterData} items={item} />
             </div>
-            <div className="container filter">
-                <div className="d-flex justify-content-between  ">
-                    <button className='btn btn-success' >All</button>
-                    <button className='btn btn-primary' >Web Development</button>
-                    <button className='btn btn-secondary' >App Development</button>
-                    <button className='btn btn-warning' >Full Stack Java</button>
-                    <button className='btn btn-info' >Full Stack Python</button>
-                </div>
-            </div>
-            <section className="container mt-5">
-                <div className="row g-3">
-                    {Data.map((item) => {
-                        return (<Card
-                            img={item.img}
-                            content={item.content}
-                            name={item.name} />)
-                    })}
-                </div>
-            </section>
-        </div>
-    )
-}
+            <Card data={data} />
+        </>
+    );
+};
 
-export default Course
+export default Course;

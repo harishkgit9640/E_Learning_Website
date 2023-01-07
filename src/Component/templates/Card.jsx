@@ -1,26 +1,36 @@
 import React from 'react';
-// import Data from './Data';
-
-const Card = (props) => {
-    return (
-        <>
-            <div className="col-lg-4 col-sm-6 col-12">
-                <div className="card">
-                    <img src={props.img} className="card-img-top" alt="cardImg" />
+const Card = ({ data }) => {
+  return (
+    <>
+      <div className="container  col-10 mx-auto mt-5 d-flex">
+        <div className="row g-3">
+          {data.map((curVal) => {
+            const { id, course, img, desc, category } = curVal;
+            return (
+              <>
+                <div className="col-12 col-md-4 col-lg-4 col-xl-4">
+                  <div className="card">
+                    <img src={img} alt="Course" className="img-fluid" />
                     <div className="card-body">
-                        <p className="card-text">
-                            {props.content} Lorem ipsum dolor, sit met consectetur adipisicing elit. Vitae exercitationem </p>
+                      <h5 className="card-title" key={id}>
+                        {course}
+                      </h5>
+                      <h3>{category}</h3>
+                      <p className="card-text">{desc}</p>
+                      <div className="buttons d-flex justify-content-between">
+                        <button className="btn btn-success">Order Now</button>
+                        <button className="btn btn-warning"> + Add Cart</button>
+                      </div>
                     </div>
-                    <h1>Hello I'll working tomorrow</h1>
-                    <div className="card-footer d-flex justify-content-between">
-                        <button className='btn btn-primary'>{props.name}</button>
-                        <p className='bg-dark'> $ 299 </p>
-                        <button className='btn btn-warning'>Add to Card</button>
-                    </div>
+                  </div>
                 </div>
-            </div>
-        </>
-    );
+              </>
+            );
+          })}
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default Card;
