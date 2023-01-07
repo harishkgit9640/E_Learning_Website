@@ -17,9 +17,8 @@ const Card = ({ data }) => {
                       </h5>
                       <h3>{category}</h3>
                       <p className="card-text">{desc}</p>
-                      <div className="buttons d-flex justify-content-between">
-                        <button className="btn btn-success">Order Now</button>
-                        <button className="btn btn-warning"> + Add Cart</button>
+                      <div className="buttons d-flex">
+                        <button className="btn btn-warning flex-fill"> + Add Cart</button>
                       </div>
                     </div>
                   </div>
