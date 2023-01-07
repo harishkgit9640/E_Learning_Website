@@ -1,4 +1,5 @@
 import React from 'react'
+import Counter from '../Counter'
 
 const Blog = () => {
     return (
@@ -11,6 +12,7 @@ const Blog = () => {
                         veniam illum quasi.</p>
                 </div>
             </div>
+            <Counter />
         </div>
     )
 }
