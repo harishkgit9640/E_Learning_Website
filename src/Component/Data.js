@@ -43,6 +43,13 @@ const Data = [
         category: 'Beginner',
         desc: 'lorem ipsum dolor sit English, consectetur Speaking Course',
     },
+    {
+        id: 7,
+        img: Img,
+        course: 'Verb',
+        category: 'Beginner',
+        desc: 'lorem ipsum dolor sit English, consectetur Speaking Course',
+    }
 ];
 
 export default Data;

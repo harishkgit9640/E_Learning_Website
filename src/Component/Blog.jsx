@@ -1,4 +1,5 @@
 import React from 'react'
+import Topheader from './Topheader'
 
 const Blog = () => {
     return (
@@ -10,6 +11,7 @@ const Blog = () => {
                         iste ullam quibusdam esse nostrum harum quam omnis dolor, tenetur officiis dolores dolorum delectus,
                         veniam illum quasi.</p>
                 </div>
+                <Topheader />
             </div>
         </div>
     )
