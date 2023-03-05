@@ -3,9 +3,9 @@ import React from 'react'
 const About = () => {
     return (
         <div>
-            <div className="container">
+            <div className="container my-5">
                 <div className="jumbotron">
-                    <h1 className="display-4 text-center">About Us</h1>
+                    <h1 className="text-center text-primary">ABOUT US</h1>
                     <p className="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ut quae voluptatum dolore
                         iste ullam quibusdam esse nostrum harum quam omnis dolor, tenetur officiis dolores dolorum delectus,
                         veniam illum quasi.</p>
@@ -14,10 +14,7 @@ const About = () => {
 
 
             <section className="container">
-                <div className="title text-center my-5">
-                    <h2 className="text-primary">About</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, ducimus.</p>
-                </div>
+
                 <div className="row g-2">
                     <div className="image col-6">
                         <img src="https://picsum.photos/500/250?both" alt='' />

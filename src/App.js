@@ -12,7 +12,9 @@ import Signup from './Component/Signup';
 import Error from './Component/Error';
 // import Faq from './Component/Faq';
 // import Footer from './Component/Footer';
+// import Registration from './Component/Registration';
 import { Routes, Route } from 'react-router-dom';
+import Registration from './Component/Registration';
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/course' element={<Course />} />
         <Route path='/blog' element={<Blog />} />
+        <Route path='/register' element={<Registration />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />

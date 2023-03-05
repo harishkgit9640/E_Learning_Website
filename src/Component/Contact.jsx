@@ -16,6 +16,14 @@ const Contact = () => {
 
     return (
         <>
+            <div className="container mt-2">
+                <div className="jumbotron">
+                    <h1 className="text-center text-primary">CONTACT US</h1>
+                    <p className="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ut quae voluptatum dolore
+                        iste ullam quibusdam esse nostrum harum quam omnis dolor, tenetur officiis dolores dolorum delectus,
+                        veniam illum quasi.</p>
+                </div>
+            </div>
             <div className="container">
                 <div className="col-md-6 col-sm-6 mx-auto">
                     <form method="post" action="#">
