@@ -1,15 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Data from './Data';
 import Card from './templates/Card';
 import Category from './templates/Category';
-
+import { useCookies } from 'react-cookie';
+import { useNavigate } from 'react-router-dom';
 
 const newCategory = [...new Set(Data.map((val) => val.category)), "All"]
 
 const Course = () => {
+    const navigator = useNavigate();
+    const [cookies, setcookies, removeCookies] = useCookies();
     const [data, setData] = useState(Data);
     const [item, setItem] = useState(newCategory);
-
+    useEffect(() => {
+        if (cookies["userName"] === undefined) {
+            navigator("/login");
+        }
+    }, []);
     const filterData = (category) => {
         if (category === "All") {
             setData(Data);

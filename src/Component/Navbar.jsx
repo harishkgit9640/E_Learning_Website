@@ -1,13 +1,19 @@
 import React from 'react';
 import Button from '@mui/material/Button';
 import { NavLink } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 const Navbar = () => {
+
+  const [Cookies, setCookies, removeCookies] = useCookies();
+  const logOut = () => {
+    removeCookies("userName");
+  }
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
           <NavLink className="navbar-brand" to="/">
-            E-Learning
+            Hii {Cookies["userName"]}
           </NavLink>
           <button
             className="navbar-toggler"
@@ -23,7 +29,7 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbar">
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <NavLink className="nav-link active" aria-current="page" to="/">
+                <NavLink className="nav-link" to="/">
                   Home
                 </NavLink>
               </li>
@@ -63,6 +69,14 @@ const Navbar = () => {
                 Sign Up
               </NavLink>
             </Button>
+
+            <Button>
+              <NavLink to="/" onClick={logOut} className="btn btn-secondary">
+                Logout
+              </NavLink>
+            </Button>
+
+
           </div>
         </div>
       </nav>

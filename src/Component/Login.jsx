@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-// import Alert from '@mui/material/Alert';
-
+import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -14,14 +14,15 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
+import { useCookies } from 'react-cookie';
 
 const theme = createTheme();
 const Login = () => {
   // <>
   //     <Alert severity="error">Page Not Found!</Alert>
   //     <Alert severity="success">This is a success alert — check it out!</Alert>
-
+  const [cookies, setCookies, removeCookies] = useCookies();
+  const navigate = useNavigate();
   const [data, setData] = useState({
     firstName: '',
     lastName: '',
@@ -37,8 +38,24 @@ const Login = () => {
     }));
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios({
+      method: "get",
+      url: "http://127.0.0.1:5000/users"
+    })
+      .then(response => {
+        for (var user of response.data) {
+          if (user.email === data.email && user.password === data.password) {
+            setCookies("userName", user.firstName);
+            navigate("/home");
+            break;
+          } else {
+            navigate("/error");
+          }
+        }
+      })
+
   };
 
   return (

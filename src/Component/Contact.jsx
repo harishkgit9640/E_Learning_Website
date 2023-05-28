@@ -2,17 +2,37 @@ import React from 'react'
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import Alert from '@mui/material/Alert';
+import axios from 'axios';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Contact = () => {
 
-    const submitForm = () => {
-        <>
-            <Alert severity="error">Page Not Found!</Alert>
-            <Alert severity="success">This is a success alert — check it out!</Alert>
-        </>
-    }
+    const navigate = useNavigate();
+    const [data, setData] = useState({
+        fullName: "", email: "", number: "", message: ""
+    });
+    const handleInput = (event) => {
+        event.preventDefault();
+        const { name, value } = event.target;
+        setData((prevProps) => ({
+            ...prevProps,
+            [name]: value
+        }));
+    };
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        axios({
+            method: "post",
+            url: "http://127.0.0.1:5000/contact",
+            data: data
+        }).then(() => {
+            alert("Your Message have been sent Successfully..");
+            navigate("/home");
+        })
+
+    }
 
     return (
         <>
@@ -30,26 +50,30 @@ const Contact = () => {
                         <div className="row g-3">
                             <div className="col-12">
                                 <Box component="form" sx={{ '& > :not(style)': { mt: 5, width: '100%' }, }} noValidate autoComplete="off" >
-                                    <TextField id="input_name" label="Full Name" variant="outlined" />
+                                    <TextField id="input_name" name="fullName" value={data.fullName}
+                                        onChange={handleInput} label="Full Name" variant="outlined" />
                                 </Box>
                             </div>
                             <div className="col-12">
                                 <Box component="form" sx={{ '& > :not(style)': { mt: 1, width: '100%' }, }} noValidate autoComplete="off" >
-                                    <TextField id="input_name" label="E-mail" variant="outlined" />
+                                    <TextField id="input_name" name="email" value={data.email}
+                                        onChange={handleInput} label="E-mail" variant="outlined" />
                                 </Box>
                             </div>
                             <div className="col-12">
                                 <Box component="form" sx={{ '& > :not(style)': { mt: 1, width: '100%' }, }} noValidate autoComplete="off" >
-                                    <TextField id="input_name" label="Mobile Number" variant="outlined" />
+                                    <TextField id="input_name" name="number" value={data.number}
+                                        onChange={handleInput} label="Mobile Number" variant="outlined" />
                                 </Box>
                             </div>
                             <div className="col-12">
                                 <Box component="form" sx={{ '& > :not(style)': { mt: 1, width: '100%' }, }} noValidate autoComplete="off" >
-                                    <TextField id="outlined-multiline-static" label="Message" multiline rows={4} />
+                                    <TextField id="outlined-multiline-static" name="message" value={data.message}
+                                        onChange={handleInput} label="Message" multiline rows={4} />
                                 </Box>
                             </div>
                             <div className="col-12">
-                                <Button onClick={submitForm} variant="contained">Submit</Button>
+                                <Button onClick={handleSubmit} variant="contained">Submit</Button>
                             </div>
                         </div>
 

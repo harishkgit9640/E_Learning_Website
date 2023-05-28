@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -10,12 +11,11 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
-
+import axios from 'axios';
 
 const theme = createTheme();
 const SignUp = () => {
-
+    const navigate = useNavigate();
     const [data, setData] = useState({
         firstName: "", lastName: "", email: "", password: ""
     });
@@ -28,9 +28,19 @@ const SignUp = () => {
         }));
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-    };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        axios({
+            method: "post",
+            url: "http://127.0.0.1:5000/signup",
+            data: data
+        }).then(() => {
+            alert("Register Successfully..");
+            navigate("/login");
+        })
+    }
+
+
 
     return (
         <ThemeProvider theme={theme}>

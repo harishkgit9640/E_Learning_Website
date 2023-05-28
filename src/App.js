@@ -10,9 +10,6 @@ import Blog from './Component/Blog';
 import Login from './Component/Login';
 import Signup from './Component/Signup';
 import Error from './Component/Error';
-// import Faq from './Component/Faq';
-// import Footer from './Component/Footer';
-// import Registration from './Component/Registration';
 import { Routes, Route } from 'react-router-dom';
 import Registration from './Component/Registration';
 
@@ -22,6 +19,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/home' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/course' element={<Course />} />
         <Route path='/blog' element={<Blog />} />
