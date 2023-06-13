@@ -23,7 +23,7 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbar">
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <NavLink className="nav-link active" aria-current="page" to="/">
+                <NavLink className="nav-link" to="/">
                   Home
                 </NavLink>
               </li>

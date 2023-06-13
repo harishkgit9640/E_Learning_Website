@@ -3,7 +3,7 @@ import React from 'react'
 const Registration = () => {
     return (
         <>
-            <div class="container contact_us my-5">
+            <div class="container my-5">
                 <div class="row">
                     <div class="col-md-10 mx-auto">
                         <div class="contact-form">
