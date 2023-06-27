@@ -12,9 +12,12 @@ app.use(express.urlencoded({
 }));
 
 app.use(express.json());
+
 app.get("/", (request, response) => {
     response.send("welcome to your website");
 })
+
+
 app.get("/users", (request, response) => {
     mongoClient.connect(connectionString).then((clientObject) => {
         var database = clientObject.db("shopkaro");
@@ -25,11 +28,12 @@ app.get("/users", (request, response) => {
 });
 
 app.post("/signup", (request, response) => {
+    const [firstName, lastName, email, password] = request.body;
     var user = {
-        "firstName": request.body.firstName,
-        "lastName": request.body.lastName,
-        "email": request.body.email,
-        "password": request.body.password,
+        firstName,
+        lastName,
+        email,
+        password
     }
     mongoClient.connect(connectionString).then(clientObject => {
         var database = clientObject.db("shopkaro");
@@ -42,17 +46,18 @@ app.post("/signup", (request, response) => {
 
 // contact information api
 app.post("/contact", (request, response) => {
+    const [fullName, email, number, message] = request.body;
     var data = {
-        "fullName": request.body.fullName,
-        "email": request.body.email,
-        "number": request.body.number,
-        "message": request.body.message,
+        fullName,
+        email,
+        number,
+        message,
     }
     mongoClient.connect(connectionString).then(clientObject => {
         var database = clientObject.db("shopkaro");
         database.collection("contact").insertOne(data).then(result => {
             console.log("data Inserted successfully");
-            response.redirect("/contact");
+            response.redirect("/");
         })
     })
 });
