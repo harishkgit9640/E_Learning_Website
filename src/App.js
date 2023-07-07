@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-// import '../node_modules/bootstrap/dist/js/bootstrap.bundle';
+import '../node_modules/bootstrap/dist/js/bootstrap.bundle.js';
 import Navbar from './Component/Navbar';
 import Home from './Component/Home';
 import About from './Component/About';
