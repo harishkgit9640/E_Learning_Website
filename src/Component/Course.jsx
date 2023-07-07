@@ -9,9 +9,9 @@ const newCategory = [...new Set(Data.map((val) => val.category)), "All"]
 
 const Course = () => {
     const navigator = useNavigate();
-    const [cookies, setcookies, removeCookies] = useCookies();
+    const [cookies] = useCookies();
     const [data, setData] = useState(Data);
-    const [item, setItem] = useState(newCategory);
+    const [item] = useState(newCategory);
     useEffect(() => {
         if (cookies["userName"] === undefined) {
             navigator("/login");
@@ -28,13 +28,13 @@ const Course = () => {
         setData(updateVal);
     }
     return (
-        <>
+        <div>
             <div className="container my-5">
                 <h1 className="text-center text-primary">OUR COURSES</h1>
                 <Category filterData={filterData} item={item} />
             </div>
             <Card data={data} />
-        </>
+        </div>
     );
 };
 

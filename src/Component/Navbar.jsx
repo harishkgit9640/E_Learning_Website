@@ -4,12 +4,12 @@ import { NavLink } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 const Navbar = () => {
 
-  const [Cookies, setCookies, removeCookies] = useCookies();
+  const [Cookies, removeCookies] = useCookies();
   const logOut = () => {
     removeCookies("userName");
   }
   return (
-    <>
+    <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
           <NavLink className="navbar-brand" to="/">
@@ -80,7 +80,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-    </>
+    </div>
   );
 };
 

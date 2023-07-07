@@ -21,7 +21,7 @@ const Login = () => {
   // <>
   //     <Alert severity="error">Page Not Found!</Alert>
   //     <Alert severity="success">This is a success alert — check it out!</Alert>
-  const [cookies, setCookies, removeCookies] = useCookies();
+  const [setCookies] = useCookies();
   const navigate = useNavigate();
   const [data, setData] = useState({
     firstName: '',

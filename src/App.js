@@ -1,6 +1,7 @@
+import React from 'react'
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import '../node_modules/bootstrap/dist/js/bootstrap.bundle';
+// import '../node_modules/bootstrap/dist/js/bootstrap.bundle';
 import Navbar from './Component/Navbar';
 import Home from './Component/Home';
 import About from './Component/About';
@@ -15,7 +16,7 @@ import Registration from './Component/Registration';
 
 function App() {
   return (
-    <>
+    <div>
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
@@ -29,7 +30,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='*' element={<Error />} />
       </Routes>
-    </>
+    </div>
   );
 }
 

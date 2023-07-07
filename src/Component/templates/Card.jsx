@@ -1,18 +1,18 @@
 import React from 'react';
 const Card = ({ data }) => {
   return (
-    <>
+    <div>
       <div className="container  col-10 mx-auto mt-5 d-flex">
         <div className="row g-3">
           {data.map((curVal) => {
             const { id, course, img, desc, category } = curVal;
             return (
-              <>
+              <div key={id}>
                 <div className="col-12 col-md-4 col-lg-4 col-xl-4">
                   <div className="card">
                     <img src={img} alt="Course" className="img-fluid" />
                     <div className="card-body">
-                      <h5 className="card-title" key={id}>
+                      <h5 className="card-title">
                         {course}
                       </h5>
                       <h3>{category}</h3>
@@ -23,12 +23,12 @@ const Card = ({ data }) => {
                     </div>
                   </div>
                 </div>
-              </>
+              </div>
             );
           })}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

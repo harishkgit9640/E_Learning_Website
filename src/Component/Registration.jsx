@@ -2,7 +2,7 @@ import React from 'react'
 
 const Registration = () => {
     return (
-        <>
+        <div>
             <div class="container my-5">
                 <div class="row">
                     <div class="col-md-10 mx-auto">
@@ -113,7 +113,7 @@ const Registration = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
 
     )
 }
